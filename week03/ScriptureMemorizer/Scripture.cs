@@ -6,11 +6,12 @@ public class Scripture
     {
         _reference = reference;
         string _text = text;
-
-
     }
     public void HideRandomWords(int numberToHide)
     {
+        Random r = new Random();
+        
+
 
     }
     public string GetDisplayText()
