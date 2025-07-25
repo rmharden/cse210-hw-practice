@@ -9,6 +9,7 @@ public class Reference
         _book = book;
         _chapter = chapter;
         _verse = verse;
+        _endVerse = _verse;
     }
     public Reference(string book, int chapter, int verse, int endVerse)
     {
@@ -19,7 +20,10 @@ public class Reference
     }
     public string GetDisplayText()
     {
-        return ""; 
+        while (_endVerse != _verse)
+        {
+            return _book + " " + _chapter + ":" + _verse + "-" + _endVerse;
+        }
+        return _book + " " + _chapter + ":" + _verse;
     }
-
 }

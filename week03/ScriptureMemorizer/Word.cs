@@ -17,7 +17,7 @@ public class Word
     }
     public bool IsHidden()
     {
-        return true;
+        return false;
     }
     public string GetDisplayText()
     {
