@@ -20,7 +20,30 @@ class Program
 
             _userResponse = Console.ReadLine();
 
+            if (_userResponse == "1")
+            {
 
+            }
+            else if (_userResponse == "2")
+            {
+
+            }
+            else if (_userResponse == "3")
+            {
+
+            }
+            else if (_userResponse == "4")
+            {
+
+            }
+            else if (_userResponse == "5")
+            {
+                Console.WriteLine("Thank you for using the Journal Program!\n");
+            }
+            else
+            {
+                Console.WriteLine("Invalid number\n");
+            }
         }
 
     }
