@@ -13,6 +13,6 @@ public class PromptGenerator
             "If I had one thing I could do over today, what would it be?"
         };
         int i = r.Next(_prompts.Count);
-        return "";
+        return _prompts[i];
     }
 }

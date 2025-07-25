@@ -5,7 +5,7 @@ public class Journal
     {      
         DateTime theCurrentTime = DateTime.Now;
         string _date = theCurrentTime.ToShortDateString();
-        Entry dateEntry = new Entry(_date);
+        _entries.Add(_date);
 
         PromptGenerator pG = new PromptGenerator();
         string _promptText = pG.GetRandomPrompt();
@@ -17,16 +17,12 @@ public class Journal
         foreach (Entry entry in _entries)
         {
             string[] parts = entry.ToString().Split(",");
-            string _date = parts[0];
-            string _promptText = parts[1];
-            string _entryText = parts[3];
-
             Console.WriteLine($"Date: {parts[1]} - Prompt: {parts[2]}\n{parts[3]}");
         }
     }
     public void DisplayAll()
     {
-
+        
     }
     public void SaveToFile(string file)
     {
