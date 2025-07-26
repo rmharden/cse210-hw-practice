@@ -39,9 +39,9 @@ public class Journal
         foreach (string line in lines)
         {
             string[] parts = line.Split(",");
-            string _date = parts[0];
-            string _promptText = parts[1];
-            string _entryText = parts[2];
+            // string _date = parts[0];
+            // string _promptText = parts[1];
+            // string _entryText = parts[2];
         }
     }
 }
