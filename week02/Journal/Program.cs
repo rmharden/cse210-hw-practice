@@ -27,7 +27,8 @@ class Program
             // 1. Write
             if (_userResponse == "1")
             {
-
+                PromptGenerator p1 = new PromptGenerator();
+                Console.WriteLine(p1.GetRandomPrompt());
             }
             // 2. Display
             else if (_userResponse == "2")

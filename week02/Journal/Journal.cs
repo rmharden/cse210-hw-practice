@@ -5,7 +5,7 @@ public class Journal
     {      
         DateTime theCurrentTime = DateTime.Now;
         string _date = theCurrentTime.ToShortDateString();
-        _entries.Add(_date);
+        //_entries.Add(_date);
 
         PromptGenerator pG = new PromptGenerator();
         string _promptText = pG.GetRandomPrompt();
@@ -22,7 +22,7 @@ public class Journal
     }
     public void DisplayAll()
     {
-        
+
     }
     public void SaveToFile(string file)
     {
