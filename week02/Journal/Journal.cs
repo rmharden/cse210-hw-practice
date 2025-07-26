@@ -25,7 +25,7 @@ public class Journal
         {
             using (StreamWriter outputFile = new StreamWriter(file))
             {
-                outputFile.WriteLine(entry);
+                outputFile.WriteLine($"Date: {entry._date} - Prompt: {entry._promptText}\n{entry._entryText}");
             }
         }
     }
