@@ -11,7 +11,9 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
+            Console.WriteLine();
             entry.Display();
+            Console.WriteLine();
         }
     }
     public void SaveToFile(string file)
