@@ -37,8 +37,8 @@ class Program
                 Entry anEntry = new Entry();
                 anEntry._date = _date;
 
-                Console.WriteLine(aPrompt.GetRandomPrompt());
                 anEntry._promptText = aPrompt.GetRandomPrompt();
+                Console.WriteLine(anEntry._promptText);
 
                 Console.Write("> ");
 
