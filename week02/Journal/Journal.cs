@@ -1,48 +1,30 @@
 public class Journal
 {
     List<Entry> _entries = new List<Entry>();
+    // This is what Chad Macbeth has there
+
     public void AddEntry(Entry newEntry)
-    {      
-        DateTime theCurrentTime = DateTime.Now;
-        string _date = theCurrentTime.ToShortDateString();
-        //_entries.Add(_date);
-
-        PromptGenerator pG = new PromptGenerator();
-        string _promptText = pG.GetRandomPrompt();
-        Console.WriteLine(_promptText);
-
-        Console.Write("> ");
-        string _entryText = Console.ReadLine();
-
-        foreach (Entry entry in _entries)
-        {
-            string[] parts = entry.ToString().Split(",");
-            Console.WriteLine($"Date: {parts[1]} - Prompt: {parts[2]}\n{parts[3]}");
-        }
+    {
+        _entries.Add(newEntry);
     }
     public void DisplayAll()
     {
-
+        foreach (Entry entry in _entries)
+        {
+            entry.Display();
+        }
     }
     public void SaveToFile(string file)
     {
+        //loop through each item in _entries and save it in a file
+        
         string _file = file;
-        string[] lines = System.IO.File.ReadAllLines(file);
 
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split(",");
-            string _date = parts[0];
-            string _promptText = parts[1];
-            string _entryText = parts[3];
-            using (StreamWriter outputFile = new StreamWriter(file))
-            {
-                outputFile.WriteLine($"Date: {parts[1]} - Prompt: {parts[2]}\n{parts[3]}");
-            }
-        }  
+
     }
     public void LoadFromFile(string file)
     {
+        // loop through each line in the file and create Entry objects to put in the list - clear the list so there are not duplicates
         string _file = file;
     }
 }

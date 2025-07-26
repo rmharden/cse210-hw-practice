@@ -5,8 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        PromptGenerator aPrompt = new PromptGenerator();
         List<Entry> _entries = new List<Entry>();
-        Journal j1 = new Journal();
+        Journal theJournal = new Journal();
 
         string _userResponse = "";
         while (_userResponse != "5")
@@ -27,24 +28,45 @@ class Program
             // 1. Write
             if (_userResponse == "1")
             {
-                PromptGenerator p1 = new PromptGenerator();
-                Console.WriteLine(p1.GetRandomPrompt());
+                // create an entry object to pass to the jounral for storage
+                // make an entry object to pass it through
+
+                DateTime theCurrentTime = DateTime.Now;
+                string _date = theCurrentTime.ToShortDateString();
+
+                Entry anEntry = new Entry();
+                anEntry._date = _date;
+
+                Console.WriteLine(aPrompt.GetRandomPrompt());
+                anEntry._promptText = aPrompt.GetRandomPrompt();
+
+                Console.Write("> ");
+
+                anEntry._entryText = Console.ReadLine();
+
+                theJournal.AddEntry(anEntry);
+
             }
             // 2. Display
             else if (_userResponse == "2")
             {
-                Entry newEntry = new Entry();
-                newEntry.Display();
+                theJournal.DisplayAll();
             }
             // 3. Load
             else if (_userResponse == "3")
             {
-
+                Console.WriteLine("What is the name of the file?");
+                Console.Write("> ");
+                string _file = Console.ReadLine();
+                theJournal.LoadFromFile(_file);                
             }
             // 4. Save
             else if (_userResponse == "4")
             {
-
+                Console.WriteLine("What is the name of the file?");
+                Console.Write("> ");
+                string _file = Console.ReadLine();
+                theJournal.SaveToFile(_file);  
             }
             // 5. Quit
             else if (_userResponse == "5")
