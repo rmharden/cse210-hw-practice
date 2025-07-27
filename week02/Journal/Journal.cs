@@ -42,9 +42,15 @@ public class Journal
         string[] lines = System.IO.File.ReadAllLines(file);
         foreach (string line in lines)
         {
-            Console.WriteLine(line);
-        }
+            //Console.WriteLine(line);
+            string[] parts = line.Split("~|~");
+            Entry newEntry = new Entry();
+            newEntry._date = parts[0];
+            newEntry._promptText = parts[1];
+            newEntry._entryText = parts[2];
 
+            _entries.Add(newEntry);
+        }
     }
 }
 
