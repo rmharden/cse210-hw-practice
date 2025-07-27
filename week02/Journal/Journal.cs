@@ -38,7 +38,15 @@ public class Journal
     public void LoadFromFile(string file)
     {
         // loop through each line in the file and create Entry objects to put in the list - clear the list so there are not duplicates
-        
-        
+        Console.WriteLine($"Loading {file}...");
+        string[] lines = System.IO.File.ReadAllLines(file);
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+
     }
 }
+
+// https://video.byui.edu/media/t/1_uoyhkbf2
+// https://video.byui.edu/media/t/1_twcn0vdk
