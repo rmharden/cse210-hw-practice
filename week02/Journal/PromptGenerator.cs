@@ -18,5 +18,13 @@ public class PromptGenerator
 
         // Trying to make a random prompt that is different each time:
         Random r = new Random();
+        while (_prompts.Count > 0)
+        {
+            int i = r.Next(_prompts.Count);
+            string selectedPrompt = _prompts[i];
+            _prompts.RemoveAt(i);
+            return selectedPrompt;
+        }
+        return "";
     }
 }
