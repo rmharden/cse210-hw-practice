@@ -10,9 +10,13 @@ public class PromptGenerator
     };
     public string GetRandomPrompt()
     {
+        // This works:
+        // Random r = new Random();
+        // //get a random index value and lookup the string in _prompts
+        // int i = r.Next(_prompts.Count);
+        // return _prompts[i];
+
+        // Trying to make a random prompt that is different each time:
         Random r = new Random();
-        //get a random index value and lookup the strin in _prompts
-        int i = r.Next(_prompts.Count);
-        return _prompts[i];
     }
 }
