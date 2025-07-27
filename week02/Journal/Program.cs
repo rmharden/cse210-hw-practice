@@ -8,12 +8,10 @@ class Program
         PromptGenerator aPrompt = new PromptGenerator();
         List<Entry> _entries = new List<Entry>();
         Journal theJournal = new Journal();
-
+        Console.WriteLine("\nWelcome to the Journal Program!");
         string _userResponse = "";
         while (_userResponse != "5")
         {
-            Console.WriteLine("\nWelcome to the Journal Program!");
-
             Console.WriteLine("\nPlease select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -45,7 +43,6 @@ class Program
                 anEntry._entryText = Console.ReadLine();
 
                 theJournal.AddEntry(anEntry);
-
             }
             // 2. Display
             else if (_userResponse == "2")
@@ -58,7 +55,7 @@ class Program
                 Console.WriteLine("What is the name of the file?");
                 Console.Write("> ");
                 string _file = Console.ReadLine();
-                theJournal.LoadFromFile(_file);                
+                theJournal.LoadFromFile(_file);
             }
             // 4. Save
             else if (_userResponse == "4")
@@ -66,7 +63,7 @@ class Program
                 Console.WriteLine("What is the name of the file?");
                 Console.Write("> ");
                 string _file = Console.ReadLine();
-                theJournal.SaveToFile(_file);  
+                theJournal.SaveToFile(_file);
             }
             // 5. Quit
             else if (_userResponse == "5")

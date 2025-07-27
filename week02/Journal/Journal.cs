@@ -2,6 +2,7 @@ using System.IO;
 public class Journal
 {
     List<Entry> _entries = new List<Entry>();
+    Entry anEntry = new Entry();
     // This is what Chad Macbeth has there
 
     public void AddEntry(Entry newEntry)
@@ -12,7 +13,6 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine();
             entry.Display();
             Console.WriteLine();
         }
@@ -21,27 +21,21 @@ public class Journal
     {
         //loop through each item in _entries and save it in a file
         //string _file = file;
-        foreach (Entry entry in _entries)
+        // this part only saves one entry to the file, not all of them
+        Console.WriteLine("Saving to file...");
+        using (StreamWriter outputFile = new StreamWriter(file))
         {
-            using (StreamWriter outputFile = new StreamWriter(file))
+            // This is working now.
+            foreach (Entry entry in _entries)
             {
                 outputFile.WriteLine($"Date: {entry._date} - Prompt: {entry._promptText}\n{entry._entryText}");
             }
         }
+        Console.WriteLine($"{file} saved.");
     }
     public void LoadFromFile(string file)
     {
         // loop through each line in the file and create Entry objects to put in the list - clear the list so there are not duplicates
-        //string _file = file;
-
-        string[] lines = System.IO.File.ReadAllLines(file);
-
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split(",");
-            // string _date = parts[0];
-            // string _promptText = parts[1];
-            // string _entryText = parts[2];
-        }
+        
     }
 }
