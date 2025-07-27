@@ -8,7 +8,9 @@ class Program
         PromptGenerator aPrompt = new PromptGenerator();
         List<Entry> _entries = new List<Entry>();
         Journal theJournal = new Journal();
+
         Console.WriteLine("\nWelcome to the Journal Program!");
+        
         string _userResponse = "";
         while (_userResponse != "5")
         {

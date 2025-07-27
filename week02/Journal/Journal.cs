@@ -28,7 +28,9 @@ public class Journal
             // This is working now.
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"Date: {entry._date} - Prompt: {entry._promptText}\n{entry._entryText}");
+                // outputFile.WriteLine($"Date: {entry._date} - Prompt: {entry._promptText}\n{entry._entryText}");
+
+                outputFile.WriteLine($"{entry._date}~|~{entry._promptText}~|~{entry._entryText}");
             }
         }
         Console.WriteLine($"{file} saved.");
@@ -36,6 +38,7 @@ public class Journal
     public void LoadFromFile(string file)
     {
         // loop through each line in the file and create Entry objects to put in the list - clear the list so there are not duplicates
+        
         
     }
 }
