@@ -1,3 +1,10 @@
+// Rebekah Harden
+// CSE 210: Programming with Classes
+// Brother Nathan Parrish
+// Finished July 27, 2025
+
+// To exceed the requirements for the Showing Creativity Portion, I thought about reasons someone might be kept from writing a journal. My solution was to add another menu option to work through emotions. I created another class that gets a random emotion or feeling from a list and displays it to the user.The user is then has the option to write about that emotion when they choose 1 and they get their writing prompt.
+
 using System;
 
 class Program
@@ -9,7 +16,7 @@ class Program
         Journal theJournal = new Journal();
 
         Console.WriteLine("\nWelcome to the Journal Program!");
-        
+
         string _userResponse = "";
         while (_userResponse != "6")
         {
@@ -90,3 +97,5 @@ class Program
 
     }
 }
+// https://video.byui.edu/media/t/1_uoyhkbf2
+// https://video.byui.edu/media/t/1_twcn0vdk
