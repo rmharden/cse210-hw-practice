@@ -11,14 +11,15 @@ class Program
         Console.WriteLine("\nWelcome to the Journal Program!");
         
         string _userResponse = "";
-        while (_userResponse != "5")
+        while (_userResponse != "6")
         {
             Console.WriteLine("\nPlease select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit\n");
+            Console.WriteLine("5. Work Through Your Emotions");
+            Console.WriteLine("6. Quit\n");
 
             Console.Write("What would you like to do? ");
 
@@ -66,8 +67,18 @@ class Program
                 string _file = Console.ReadLine();
                 theJournal.SaveToFile(_file);
             }
-            // 5. Quit
+            // 5. 
             else if (_userResponse == "5")
+            {
+                EmotionsGenerator eG = new EmotionsGenerator();
+                Console.WriteLine($"\n{eG.GetRandomEmotion()}");
+
+                Console.WriteLine("Think about when you have felt this emotion and if you'd like to include this type of feeling in your journal entry today.");
+
+                Console.WriteLine("If you're uncomfortable with this emotion, that is alright - you can skip it and choose another or move on to the writing portion of your journal!\n");
+            }
+            // 6. Quit
+            else if (_userResponse == "6")
             {
                 Console.WriteLine("Thank you for using the Journal Program!\n");
             }
