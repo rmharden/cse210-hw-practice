@@ -75,7 +75,7 @@ class Program
                 EmotionsGenerator eG = new EmotionsGenerator();
                 Console.WriteLine($"\n'{eG.GetRandomEmotion()}'");
 
-                Console.WriteLine("\nIf you're uncomfortable with this emotion, that is alright - you can skip it and choose another or move on to the writing portion of your journal!\n");
+                Console.WriteLine("\nIf you're uncomfortable with this emotion, that is alright - you can skip it and choose another or move on to a different portion of your journal!\n");
             }
             // 6. Quit
             else if (_userResponse == "6")
