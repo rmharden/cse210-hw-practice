@@ -2,7 +2,7 @@ public class EmotionsGenerator
 {
     List<string> _emotions = new List<string>()
     {
-        "awe", "hope", "love", "wonder", "kindness", "curiosity", "vulnerability", "inspiration", "compassion", "gratitude", "peace", "forgiveness", "grounded","acceptance", "contentment","courage", "clarity", "humility", "conentment", "excitement", "playfulness", "excitement", "conident", "pride", "empowered", "freedom", "joy","possibility", "fear", "anxious", "failure", "rage", "grief", "sorrow", "loneliness", "discomfort", "uncertainty", "judgement", "dissapointment", "rejection", "guilt", "frustration", "shame", "overwhelm", "doubt"
+        "awe", "hope", "love", "wonder", "kind", "curious", "vulnerable", "inspired", "compassion", "gratitude", "peace", "forgiven", "grounded","accepted", "contentment","courage", "clarity", "humble", "conent", "excited", "conident", "pride", "empowered", "freedom", "joy","possible", "fear", "anxious", "failure", "rage", "grief", "sorrow", "loneliness", "discomfort", "uncertainty", "judgement", "dissapointment", "rejection", "guilt", "frustration", "shame", "overwhelm", "doubt", "empathy"
     };
     public string GetRandomEmotion()
     {

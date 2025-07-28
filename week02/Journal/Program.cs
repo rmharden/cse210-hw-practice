@@ -70,12 +70,12 @@ class Program
             // 5. 
             else if (_userResponse == "5")
             {
+                Console.WriteLine("\nThink about when you have felt the following emotion and if you'd like to include this type of feeling in your journal entry today.");
+
                 EmotionsGenerator eG = new EmotionsGenerator();
-                Console.WriteLine($"\n{eG.GetRandomEmotion()}");
+                Console.WriteLine($"\n'{eG.GetRandomEmotion()}'");
 
-                Console.WriteLine("Think about when you have felt this emotion and if you'd like to include this type of feeling in your journal entry today.");
-
-                Console.WriteLine("If you're uncomfortable with this emotion, that is alright - you can skip it and choose another or move on to the writing portion of your journal!\n");
+                Console.WriteLine("\nIf you're uncomfortable with this emotion, that is alright - you can skip it and choose another or move on to the writing portion of your journal!\n");
             }
             // 6. Quit
             else if (_userResponse == "6")
