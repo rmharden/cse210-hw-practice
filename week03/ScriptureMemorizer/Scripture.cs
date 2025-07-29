@@ -55,16 +55,32 @@ public class Scripture
 
         Random r = new Random();
 
-        Word w2 = new Word(_text);
+        List<int> _wordsNotHidden = new List<int>();
+        for (int i = 0; i < _words.Count; i++)
+        {
+            if (!_words[i].IsHidden())
+            {
+                _wordsNotHidden.Add(i);
+            }
+        }
+        if (_wordsNotHidden.Count == 0)
+        {
+            Console.Clear();
+            
+        }
 
-        w2.GetDisplayText();
+
     }
     public string GetDisplayText()
     {
         // Display the reference and all the words. 
         // This is going to call GetDisplayText on the Word and if it gets underscores back, it will display underscores.
         // example: string text = "abc" + "def";
-
+        Console.WriteLine(_reference);
+        foreach (Word word in _words)
+        {
+            return word.GetDisplayText() + " ";
+        }
         return "";
     }
 

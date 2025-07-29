@@ -32,13 +32,12 @@ class Program
         // call the functions in the scripture class.
         // Chad macbeth said not to use any other functions here.
 
+        Console.WriteLine(s1.GetDisplayText());
+
         // I like this, but there might be another way.
         while (s1.IsCompletelyHidden() && _userResponse.Trim().ToLower() != "quit")
         {
             Console.Clear();
-
-            // Console.WriteLine(r1.GetDisplayText());
-            Console.Write(s1.GetDisplayText());
 
 
             Console.WriteLine(" ");
