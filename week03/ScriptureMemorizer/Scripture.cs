@@ -5,7 +5,10 @@ public class Scripture
    private string _text;
     public Scripture(Reference reference, string text)
     {
+        // Initialize reference:
         _reference = reference;
+
+        // Split up the words in texts and store each as a Word object in the list _words:
        
     }
     public void HideRandomWords(int numberToHide)

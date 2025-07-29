@@ -9,6 +9,7 @@ public class Word
     }
     public void Hide()
     {
+        // changing the state:
         _isHidden = true;
     }
     public void Show()
@@ -21,7 +22,10 @@ public class Word
     }
     public string GetDisplayText()
     {
+        // This is an if statement:
+
         // Should return the word if visible or return underscores, like this: _____ if hidden.
+
         return _text;
     }
 }
