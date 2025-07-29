@@ -9,7 +9,16 @@ public class Scripture
         _reference = reference;
 
         // Split up the words in texts and store each as a Word object in the list _words:
-       
+        List<Word> _words = new List<Word>();
+
+        foreach (string w in text.Split(" "))
+        {
+            // This is adding the split string as a new object to the list:
+            _words.Add(new Word(w));
+        }
+
+
+
     }
     public void HideRandomWords(int numberToHide)
     {
