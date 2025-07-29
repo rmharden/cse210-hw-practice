@@ -7,16 +7,16 @@ public class Word
         _text = text;
         _isHidden = false;
     }
-    public void Hide()
+    public void Hide() //SetIsHidden()
     {
         // changing the state:
         _isHidden = true;
     }
     public void Show()
     {
-
+        _isHidden = false; // not sure about this
     }
-    public bool IsHidden()
+    public bool IsHidden() //GetIsHidden()
     {
         return false;
     }
