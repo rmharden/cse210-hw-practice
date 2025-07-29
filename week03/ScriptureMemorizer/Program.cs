@@ -1,3 +1,10 @@
+// Rebekah Harden
+// CSE 210: Programming with Classes
+// Brother Nathan Parrish
+// July 29, 2025
+
+// W03 Project: Scripture Memorizer Program
+
 using System;
 
 class Program
@@ -22,6 +29,15 @@ class Program
             Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
             _userResponse = Console.ReadLine();
         }
-        
+
     }
 }
+
+
+// Here are all my resources to learn how to do this:
+
+// https://learn.microsoft.com/en-us/dotnet/api/system.string.-ctor?view=net-9.0
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/
+// https://learn.microsoft.com/en-us/dotnet/api/system.math.min?view=net-9.0
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeat?view=net-9.0
