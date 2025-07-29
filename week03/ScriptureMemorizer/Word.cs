@@ -27,7 +27,14 @@ public class Word
 
         // Should return the word if visible or return underscores, like this: _____ if hidden.
 
-        return _text;
+        if (_isHidden)
+        {
+            return new string('_', _text.Length);
+        }
+        else
+        {
+            return _text;
+        }
     }
 }
 

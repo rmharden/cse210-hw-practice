@@ -27,7 +27,10 @@ class Program
         Reference r2 = new Reference("Proverbs", 3, 5, 6);
         Scripture s2 = new Scripture(r2, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways, acknowledge him, and he shall direct thy paths.");
 
-        
+        // loop
+        // display, hide, check if we need to quit:
+        // call the functions in the scripture class.
+        // Chad macbeth said not to use any other functions here.
 
         // I like this, but there might be another way.
         while (s1.IsCompletelyHidden() && _userResponse.Trim().ToLower() != "quit")

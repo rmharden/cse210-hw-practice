@@ -22,6 +22,19 @@ public class Scripture
             _words.Add(new Word(w));
         }
     }
+
+    // // I do not know if this is how I get this to other areas of the program:
+    // public string GetText()
+    // {
+    //     return _text;
+    // }
+    // public void SetText(string text)
+    // {
+    //     _text = text;
+    // }
+
+
+
     public void HideRandomWords(int numberToHide)
     {
         // Set the state of a randomly selected group of words to be hidden
@@ -35,6 +48,12 @@ public class Scripture
         // Can be done with loops, if statements, call the "IsVisible function" (I don't know what Chad Macbeth is referring to here...).
 
         // Use the Hide function to hide them.
+
+        Random r = new Random();
+
+        Word w2 = new Word(_text);
+
+        w2.GetDisplayText();
     }
     public string GetDisplayText()
     {
