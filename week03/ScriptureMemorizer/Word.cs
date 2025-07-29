@@ -22,6 +22,7 @@ public class Word
     }
     public string GetDisplayText()
     {
+        // This one is going to determine what to display, not the Scripture method GetDisplayText().
         // This is an if statement:
 
         // Should return the word if visible or return underscores, like this: _____ if hidden.

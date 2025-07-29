@@ -37,7 +37,6 @@ class Program
             // Console.WriteLine(r1.GetDisplayText());
             Console.Write(s1.GetDisplayText());
 
-            Console.Write($"{w.GetDisplayText()}");
 
             Console.WriteLine(" ");
             Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
