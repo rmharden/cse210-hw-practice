@@ -29,7 +29,7 @@ public class Word
 
         if (_isHidden)
         {
-            return new string('_', _text.Length);
+            return new string('_', _text.Length); // When writing this, VS Code said that I couldn't put "_" because it meant something different that '_'.
         }
         else
         {
