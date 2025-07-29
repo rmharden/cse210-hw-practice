@@ -21,6 +21,10 @@ public class Scripture
             // This is adding the split string as a new object to the list:
             _words.Add(new Word(w));
         }
+        foreach (Word word in _words)
+        {
+            Console.WriteLine(word + " ");
+        }
     }
 
     // // I do not know if this is how I get this to other areas of the program:
