@@ -3,7 +3,9 @@
 // Brother Nathan Parrish
 // July 29, 2025
 
+// Week 03: Encapsulation
 // W03 Project: Scripture Memorizer Program
+
 
 using System;
 
@@ -54,3 +56,4 @@ class Program
 // https://learn.microsoft.com/en-us/dotnet/api/system.math.min?view=net-9.0
 // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeat?view=net-9.0
 // https://learn.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-9.0
+// https://video.byui.edu/media/t/1_sv3gxgzs

@@ -9,7 +9,7 @@ public class Word
     }
     public void Hide()
     {
-
+        _is
     }
     public void Show()
     {
@@ -21,18 +21,8 @@ public class Word
     }
     public string GetDisplayText()
     {
-        if (IsHidden() == false)
-        {
-            return _text;
-        }
-        else
-        {
-            for (int index = 0; index < _text.Length; index++)
-            {
-                Console.Write("_");
-            };
-        }
-        return "";
+        // Should return the word if visible or return underscores, like this: _____ if hidden.
+        return _text;
     }
 }
 
@@ -52,3 +42,19 @@ public class Word
 
             // This was from Chad Macbeth's video on BYU-I Videos:
             // https://video.byui.edu/media/t/1_86gjzj20
+
+        // public string GetDisplayText()
+        // {
+        // if (IsHidden() == false)
+        // {
+        //     return _text;
+        // }
+        // else
+        // {
+        //     for (int index = 0; index < _text.Length; index++)
+        //     {
+        //         Console.Write("_");
+        //     };
+        // }
+        // return "";
+        // }
