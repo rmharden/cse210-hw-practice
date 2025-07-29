@@ -14,4 +14,4 @@ public class EmotionsGenerator
     }
 }
 
-// The idea for words to evoke emotions for journal writing came from a book called Dwell by Devon Lotus
+// The idea for words to evoke emotions for journal writing came from a book called Dwell by Devon Loftus
