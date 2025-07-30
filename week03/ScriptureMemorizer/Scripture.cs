@@ -63,7 +63,11 @@ public class Scripture
                 _wordsNotHidden.Add(i);
             }
         }
-
+        if (_wordsNotHidden.Count == 0)
+        {
+            Console.Clear();
+            Console.Write($"{_words} ");
+        }
         numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count + 1);
 
         for (int i = 0; i < numberToHide; i++)

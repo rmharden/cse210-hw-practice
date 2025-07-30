@@ -40,13 +40,16 @@ class Program
             Console.Clear();
             Console.WriteLine(s1.GetDisplayText());
             Console.WriteLine(" ");
-            Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
 
             Random r = new Random();
             int numberToHide = r.Next(1, 4);
             s1.HideRandomWords(numberToHide);
+            
             _userResponse = Console.ReadLine();
         }
+        Console.Clear();
+        Console.WriteLine(s1.GetDisplayText());
+        Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
     }
 }
 
