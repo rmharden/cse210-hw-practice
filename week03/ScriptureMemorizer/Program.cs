@@ -24,8 +24,8 @@ class Program
         Reference r2 = new Reference("Proverbs", 3, 5, 6);
         Scripture s2 = new Scripture(r2, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways, acknowledge him, and he shall direct thy paths.");
 
-
-        // This chooses a scripture randomly - though, you can get the same scripture for a few tries each you start.
+        // The instructions say that the the program has multiple constructors for the scripture reference to handle, but it doesn't say what should actually display out of the two, since the demo only showed one scripture. I chose to make the program pick a random scripture with it's reference display when the program is run.
+        // This chooses a scripture randomly from the list of local variables - though, you can get the same scripture for a few times when you start the program each time.
         List<Scripture> scriptures = new List<Scripture>()
         {
             s1, s2
@@ -42,7 +42,7 @@ class Program
         Console.WriteLine(selected.GetDisplayText());
 
         // I like this, but there might be another way.
-        // Once IsCompletelyHidden, !seleced will return true which the ! makes false and stops the loop.
+        // Once IsCompletelyHidden, !seleced will return 'true' which the ! makes false and stops the loop.
         while (!selected.IsCompletelyHidden() && _userResponse.Trim().ToLower() != "quit")
         {
             Console.Clear();

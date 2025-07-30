@@ -7,7 +7,7 @@ public class Word
         _text = text;
         _isHidden = false;
     }
-    public void Hide() //SetIsHidden()
+    public void Hide()
     {
         // changing the state:
         _isHidden = true;
@@ -16,7 +16,7 @@ public class Word
     {
         _isHidden = false; // not sure about this - I don't know where it goes in the Scripture class ... Chad Macbeth said we call all the classes and methods from the Scripture class and then the main Program calls the scripture methods... So where does the Show() method go?
     }
-    public bool IsHidden() //GetIsHidden()
+    public bool IsHidden()
     {
         // return false; // is this supposed to be different?
         return _isHidden;

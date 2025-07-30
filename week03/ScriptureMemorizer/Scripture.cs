@@ -52,12 +52,18 @@ public class Scripture
 
         numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count);
 
+        // This is considered a statement that works while a specified Boolean expression evaluates to true. The 'for statement' executes while the integer counter is less than the variable, numberToHide.
+        // The int i = 0 is an initializer and intilizes the counter variable.
+        // The next part determines if the next iteration in the loop should be executed if it evaluates to true or isn't present, the next iteration is excuted, or the loop stops.
+        // MS learn says that the condition secont must be a Boolean expression... I don't see where that part is yet.
+        // The i < numberToHide is the condition section that checks if a counter is less than that number given.
+        // i++ is an iterator section that defines what happens after each execution of the body of the loop. It is telling the loop to proceed through the incremental count.
         for (int i = 0; i < numberToHide; i++)
         {
             int randomWordIndex = r.Next(_wordsNotHidden.Count);
-            // Use the Hide function to hide them.
             int _wordsNotHiddenIndex = _wordsNotHidden[randomWordIndex];
 
+            // Use the Hide function to hide them.
             _words[_wordsNotHiddenIndex].Hide();
             _wordsNotHidden.RemoveAt(randomWordIndex);
         }
@@ -66,12 +72,16 @@ public class Scripture
     {
         // Display the reference and all the words. 
         // This is going to call GetDisplayText on the Word and if it gets underscores back, it will display underscores.
-        // example: string text = "abc" + "def";
+        // example: string text = "abc" + "def"; - From Chad Macbeth in the BYU-I videos.
 
-        string newText = _reference.GetDisplayText() + "\n\n";
+
+        // When I don't use += and I use just the operator +, it creates a new string, but it isn't stored anywhere. The += operator tells the program to store it or assign it back to anything.
+        string newText = _reference.GetDisplayText()+ "  ";
+        Console.WriteLine();
         foreach (Word word in _words)
         {
-            newText += word.GetDisplayText() + " ";
+            //newText += word.GetDisplayText() + " ";
+            newText = newText + word.GetDisplayText() + " ";
         }
         return newText.Trim();
     }
@@ -90,3 +100,4 @@ public class Scripture
 // https://learn.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-9.0
 // https://learn.microsoft.com/en-us/shows/lets-learn-dotnet/lets-learn-dotnet-csharp
 // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#compound-assignment
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements
