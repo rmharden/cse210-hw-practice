@@ -14,7 +14,7 @@ public class Word
     }
     public void Show()
     {
-        _isHidden = false; // not sure about this - I don't know where it goes in the Scripture class ... Chad Macbeth said we call all the classes and methods from the Scripture class and then the main Program calls the scripture methods... So where does Show go?
+        _isHidden = false; // not sure about this - I don't know where it goes in the Scripture class ... Chad Macbeth said we call all the classes and methods from the Scripture class and then the main Program calls the scripture methods... So where does the Show() method go?
     }
     public bool IsHidden() //GetIsHidden()
     {
@@ -30,7 +30,7 @@ public class Word
 
         if (_isHidden)
         {
-            return new string('_', _text.Length); // When writing this, VS Code said that I couldn't put "_" because it meant something different that '_'.
+            return new string('_', _text.Length); // When writing this, VS Code said that I couldn't put "_" because it meant something different than '_'.
         }
         else
         {
@@ -38,6 +38,11 @@ public class Word
         }
     }
 }
+// https://video.byui.edu/media/t/1_sv3gxgzs
+// https://learn.microsoft.com/en-us/dotnet/api/system.string.-ctor?view=net-9.0#system-string-ctor(system-char*-system-int32-system-int32)
+
+
+
 
         // Random randomWord = new Random();
         // int i = randomWord.Next(_words.Count);
