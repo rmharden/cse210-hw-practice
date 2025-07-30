@@ -2,15 +2,15 @@ public class Scripture
 {
     private Reference _reference;
     private List<Word> _words;
-   private string _text;
+   //private string _text; VS Code said I wasn't using this.
     public Scripture(Reference reference, string text)
     {
         // Initialize reference:
         _reference = reference;
 
-        // Split up the words in texts and store each as a Word object in the list _words:
-
         _words = new List<Word>(); // I had to change this. It gave me a null exception when it was List<Word> _words = new List<word>();
+
+       // Split up the words in texts and store each as a Word object in the list _words:
 
         // Split and then loop through each word
         // create a word object and put it into _words
@@ -20,40 +20,17 @@ public class Scripture
             // This is adding the split string as a new object to the list:
             _words.Add(new Word(w));
         }
-
-        Random r = new Random();
-        int _numberToHide = r.Next(1, 4);
     }
-
-    // // I do not know if this is how I get this to other areas of the program:
-    // public string GetText()
-    // {
-    //     return _text;
-    // }
-    // public void SetText(string text)
-    // {
-    //     _text = text;
-    // }
-
-
 
     public void HideRandomWords(int numberToHide)
     {
         // Set the state of a randomly selected group of words to be hidden
 
+        Random r = new Random();
+
         //Step 1:
         // Need to find a set of visible words.
         // This would be where we use the Word class method, IsHidden().
-
-        // Step 2:
-        // I need to randomly select the numberToHide that was passed through this method.
-        // Can be done with loops, if statements, call the "IsVisible function" (I don't know what Chad Macbeth is referring to here...).
-
-        // Use the Hide function to hide them.
-
-        Random r = new Random();
-
-        Word aWord = new Word(_text);
 
         List<int> _wordsNotHidden = new List<int>();
         for (int i = 0; i < _words.Count; i++)
@@ -68,12 +45,19 @@ public class Scripture
             Console.Clear();
             Console.Write($"{_words} ");
         }
-        numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count + 1);
+
+        // Step 2:
+        // I need to randomly select the numberToHide that was passed through this method.
+        // Can be done with loops, if statements, call the "IsVisible function" (I don't know what Chad Macbeth is referring to here...).
+
+        numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count);
 
         for (int i = 0; i < numberToHide; i++)
         {
             int randomWordIndex = r.Next(_wordsNotHidden.Count);
+            // Use the Hide function to hide them.
             int _wordsNotHiddenIndex = _wordsNotHidden[randomWordIndex];
+
             _words[_wordsNotHiddenIndex].Hide();
             _wordsNotHidden.RemoveAt(randomWordIndex);
         }
@@ -83,20 +67,20 @@ public class Scripture
         // Display the reference and all the words. 
         // This is going to call GetDisplayText on the Word and if it gets underscores back, it will display underscores.
         // example: string text = "abc" + "def";
-        Console.WriteLine(_reference.GetDisplayText());
+
+        string newText = _reference.GetDisplayText() +"\n\n";
         foreach (Word word in _words)
         {
-            return word.GetDisplayText() + " ";
+            newText += word.GetDisplayText() + " ";
         }
-        return "";
+        return newText.Trim();
     }
 
     public bool IsCompletelyHidden()
     {
-        // this is supposed to be false, right? if I have it false, it won't run
-        foreach (Word w in _words)
+        foreach (Word word in _words)
         {
-            if (!w.IsHidden()) return false;
+            if (!word.IsHidden()) return false;
         }
         return true;
     }

@@ -14,6 +14,7 @@ class Program
     static void Main(string[] args)
     {
         string _userResponse = "";
+        Random r = new Random();
 
         // This was test code, but I think need a Word object.
         // Word w = new Word("truth");
@@ -27,29 +28,49 @@ class Program
         Reference r2 = new Reference("Proverbs", 3, 5, 6);
         Scripture s2 = new Scripture(r2, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways, acknowledge him, and he shall direct thy paths.");
 
+        // This doesn't work. It chooses Proverbs every time.
+        // Scripture selected;
+        // if (r.Next(2) == 0)
+        // {
+        //     selected = s1;
+        // }
+        // else
+        // {
+        //     selected = s2;
+        // }
+
+        // This chooses a scripture randomly - though, you can get the same time each time you start for a few tries.
+        List<Scripture> scriptures = new List<Scripture>()
+        {
+            s1, s2
+        };
+
+        Scripture selected = scriptures[r.Next(scriptures.Count)];
+
         // loop
         // display, hide, check if we need to quit:
         // call the functions in the scripture class.
         // Chad macbeth said not to use any other functions here.
 
-        Console.WriteLine(s1.GetDisplayText());
+        Console.WriteLine(selected.GetDisplayText());
 
         // I like this, but there might be another way.
-        while (s1.IsCompletelyHidden() && _userResponse.Trim().ToLower() != "quit")
+        // Once IsCompletelyHidden, !seleced will return true which the ! makes false and stops the loop.
+        while (!selected.IsCompletelyHidden() && _userResponse.Trim().ToLower() != "quit")
         {
             Console.Clear();
-            Console.WriteLine(s1.GetDisplayText());
+            Console.WriteLine(selected.GetDisplayText());
             Console.WriteLine(" ");
 
-            Random r = new Random();
             int numberToHide = r.Next(1, 4);
-            s1.HideRandomWords(numberToHide);
-            
+            selected.HideRandomWords(numberToHide);
+
+            Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
+
             _userResponse = Console.ReadLine();
         }
         Console.Clear();
-        Console.WriteLine(s1.GetDisplayText());
-        Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
+        Console.WriteLine(selected.GetDisplayText());
     }
 }
 
@@ -63,3 +84,9 @@ class Program
 // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeat?view=net-9.0
 // https://learn.microsoft.com/en-us/dotnet/api/system.string.trim?view=net-9.0
 // https://video.byui.edu/media/t/1_sv3gxgzs
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
+// https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-9.0
+// https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-9.0
+
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
+// "The operators include the unary logical negation (!)..."
