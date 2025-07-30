@@ -16,10 +16,6 @@ class Program
         string _userResponse = "";
         Random r = new Random();
 
-        // This was test code:
-        // Word w = new Word("truth");
-
-
         // What do we do for the program that needs to be turned in? Are we supposed to make the program randomly choose one of these scriptures or do we need to only just have the program be capable of handling more than one verse?
 
         Reference r1 = new Reference("John", 3, 16);
@@ -28,16 +24,6 @@ class Program
         Reference r2 = new Reference("Proverbs", 3, 5, 6);
         Scripture s2 = new Scripture(r2, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways, acknowledge him, and he shall direct thy paths.");
 
-        // This doesn't work. It chooses Proverbs every time.
-        // Scripture selected;
-        // if (r.Next(2) == 0)
-        // {
-        //     selected = s1;
-        // }
-        // else
-        // {
-        //     selected = s2;
-        // }
 
         // This chooses a scripture randomly - though, you can get the same scripture for a few tries each you start.
         List<Scripture> scriptures = new List<Scripture>()
@@ -63,7 +49,7 @@ class Program
             Console.WriteLine(selected.GetDisplayText());
             Console.WriteLine(" ");
 
-            // This is making the numberToHide value change from 1-3:
+            // This is getting a random numberToHide value from 1-3:
             int numberToHide = r.Next(1, 4);
             selected.HideRandomWords(numberToHide);
 
@@ -92,6 +78,5 @@ class Program
 // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
 // https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-9.0
 // https://learn.microsoft.com/en-us/dotnet/api/system.boolean?view=net-9.0
-
 // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
 // "The operators include the unary logical negation (!)..."
