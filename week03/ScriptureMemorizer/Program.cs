@@ -73,9 +73,9 @@ class Program
             _userResponse = Console.ReadLine();
         }
         // Not having clearing the console shows words are left.
-        //Console.Clear();
-        // Do I need this here? Not having it here means the console clears after and then it doesn't show anything when it ends the program.
-        // Console.WriteLine(selected.GetDisplayText());
+        Console.Clear();
+        // Do I need this here? Not having it here means the console clears after and then it doesn't show anything when it ends the program. Having this by itself will write a duplicate at the end if the console isn't cleared.
+        Console.WriteLine(selected.GetDisplayText());
     }
 }
 
