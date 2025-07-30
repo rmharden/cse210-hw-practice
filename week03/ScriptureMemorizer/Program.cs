@@ -16,7 +16,7 @@ class Program
         string _userResponse = "";
         Random r = new Random();
 
-        // This was test code, but I think need a Word object.
+        // This was test code:
         // Word w = new Word("truth");
 
 
@@ -39,7 +39,7 @@ class Program
         //     selected = s2;
         // }
 
-        // This chooses a scripture randomly - though, you can get the same time each time you start for a few tries.
+        // This chooses a scripture randomly - though, you can get the same scripture for a few tries each you start.
         List<Scripture> scriptures = new List<Scripture>()
         {
             s1, s2
@@ -47,6 +47,7 @@ class Program
 
         Scripture selected = scriptures[r.Next(scriptures.Count)];
 
+        // Directions from Chad Macbeth's video on BYU-I Videos:
         // loop
         // display, hide, check if we need to quit:
         // call the functions in the scripture class.
@@ -62,15 +63,19 @@ class Program
             Console.WriteLine(selected.GetDisplayText());
             Console.WriteLine(" ");
 
+            // This is making the numberToHide value change from 1-3:
             int numberToHide = r.Next(1, 4);
             selected.HideRandomWords(numberToHide);
 
+            // I needed to move this here because it wasn't showing until the end:
             Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
 
             _userResponse = Console.ReadLine();
         }
-        Console.Clear();
-        Console.WriteLine(selected.GetDisplayText());
+        // Not having clearing the console shows words are left.
+        //Console.Clear();
+        // Do I need this here? Not having it here means the console clears after and then it doesn't show anything when it ends the program.
+        // Console.WriteLine(selected.GetDisplayText());
     }
 }
 
