@@ -12,11 +12,11 @@ public class Reference
         // set _endVerse to "something good".
         _endVerse = _verse;
     }
-    public Reference(string book, int chapter, int verse, int endVerse)
+    public Reference(string book, int chapter, int verse, int startVerse, int endVerse)
     {
         _book = book;
         _chapter = chapter;
-        _verse = verse;
+        _verse = startVerse;
         _endVerse = endVerse;
     }
     public string GetDisplayText()

@@ -39,7 +39,6 @@ class Program
         {
             Console.Clear();
 
-
             Console.WriteLine(" ");
             Console.WriteLine("\nPress enter to continue or type 'quit' to finish:");
             _userResponse = Console.ReadLine();

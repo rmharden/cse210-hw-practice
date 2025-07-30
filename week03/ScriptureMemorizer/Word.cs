@@ -18,7 +18,8 @@ public class Word
     }
     public bool IsHidden() //GetIsHidden()
     {
-        return false;
+        // return false; // is this supposed to be different?
+        return _isHidden;
     }
     public string GetDisplayText()
     {

@@ -12,7 +12,6 @@ public class Scripture
 
         List<Word> _words = new List<Word>();
 
-
         // Split and then loop through each word
         // create a word object and put it into _words
 
@@ -21,10 +20,9 @@ public class Scripture
             // This is adding the split string as a new object to the list:
             _words.Add(new Word(w));
         }
-        foreach (Word word in _words)
-        {
-            Console.WriteLine(word + " ");
-        }
+
+        Random r = new Random();
+        int _numberToHide = r.Next(1, 4);
     }
 
     // // I do not know if this is how I get this to other areas of the program:
@@ -55,6 +53,8 @@ public class Scripture
 
         Random r = new Random();
 
+        Word aWord = new Word(_text);
+
         List<int> _wordsNotHidden = new List<int>();
         for (int i = 0; i < _words.Count; i++)
         {
@@ -66,10 +66,19 @@ public class Scripture
         if (_wordsNotHidden.Count == 0)
         {
             Console.Clear();
-            
+            aWord.GetDisplayText();
         }
 
+        numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count + 1);
 
+        for (int i = 0; i < numberToHide; i++)
+        {
+            int randomWordIndex = r.Next(_wordsNotHidden.Count);
+            int _wordsNotHiddenIndex = _wordsNotHidden[randomWordIndex];
+            _words[_wordsNotHiddenIndex].Hide();
+            _wordsNotHidden.RemoveAt(randomWordIndex);
+        }
+        
     }
     public string GetDisplayText()
     {
