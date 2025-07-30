@@ -10,7 +10,7 @@ public class Scripture
 
         // Split up the words in texts and store each as a Word object in the list _words:
 
-        List<Word> _words = new List<Word>();
+        _words = new List<Word>(); // I had to change this. It gave me a null exception when it was List<Word> _words = new List<word>();
 
         // Split and then loop through each word
         // create a word object and put it into _words
@@ -63,11 +63,6 @@ public class Scripture
                 _wordsNotHidden.Add(i);
             }
         }
-        if (_wordsNotHidden.Count == 0)
-        {
-            Console.Clear();
-            aWord.GetDisplayText();
-        }
 
         numberToHide = Math.Min(numberToHide, _wordsNotHidden.Count + 1);
 
@@ -78,14 +73,13 @@ public class Scripture
             _words[_wordsNotHiddenIndex].Hide();
             _wordsNotHidden.RemoveAt(randomWordIndex);
         }
-        
     }
     public string GetDisplayText()
     {
         // Display the reference and all the words. 
         // This is going to call GetDisplayText on the Word and if it gets underscores back, it will display underscores.
         // example: string text = "abc" + "def";
-        Console.WriteLine(_reference);
+        Console.WriteLine(_reference.GetDisplayText());
         foreach (Word word in _words)
         {
             return word.GetDisplayText() + " ";
@@ -96,6 +90,10 @@ public class Scripture
     public bool IsCompletelyHidden()
     {
         // this is supposed to be false, right? if I have it false, it won't run
+        foreach (Word w in _words)
+        {
+            if (!w.IsHidden()) return false;
+        }
         return true;
     }
 }
