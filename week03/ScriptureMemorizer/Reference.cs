@@ -21,7 +21,7 @@ public class Reference
         _endVerse = endVerse;
     }
 
-    public string GitDisplayText()
+    public string GetDisplayText()
     {
         if (_endVerse == _verse)
         {
