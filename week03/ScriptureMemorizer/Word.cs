@@ -13,12 +13,13 @@ public class Word
 
     public void Hide()
     {
-
+        _isHidden = false;
     }
 
     public void Show()
     {
         // I still am not sure where to put this.
+        _isHidden = true; // ?
     }
 
     public bool IsHidden()

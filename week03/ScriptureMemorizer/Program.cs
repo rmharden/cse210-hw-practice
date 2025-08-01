@@ -13,5 +13,8 @@ class Program
         Console.WriteLine(r2.GetDisplayText());
         Scripture s2 = new Scripture(r2, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways, acknowledge him, and he shall direct thy paths.");
         Console.WriteLine();
+
+        Word w = new Word("Test");
+        Console.WriteLine(w.GetDisplayText());
     }
 } 
