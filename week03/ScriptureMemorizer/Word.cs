@@ -13,7 +13,7 @@ public class Word
 
     public void Hide()
     {
-        _isHidden = false;
+        _isHidden = true;
     }
 
     public void Show()
@@ -30,6 +30,9 @@ public class Word
 
     public string GetDisplayText()
     {
+        // Should return the word if visible or return underscores if hidden. This is an if statement.
         return _text;
     }
 }
+
+//https://video.byui.edu/media/t/1_sv3gxgzs
